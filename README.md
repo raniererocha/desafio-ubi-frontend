@@ -1,50 +1,48 @@
-# React + TypeScript + Vite
+# Projeto Frontend React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um projeto frontend moderno, construído com **React**, **TypeScript** e **Vite**, projetado para oferecer uma experiência de desenvolvimento ágil e builds otimizadas para produção. O código adota a arquitetura **MVVM (Model-View-ViewModel)**, promovendo uma clara separação de responsabilidades, alinhado aos princípios de **inversão de dependências** e **desacoplamento** do SOLID.  
 
-Currently, two official plugins are available:
+## 📚 Principais Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Biblioteca para construção de interfaces reativas e componentizadas.  
+- **TypeScript**: Tipagem estática para maior segurança e produtividade no desenvolvimento.  
+- **Vite**: Ferramenta moderna para desenvolvimento rápido e builds eficientes.  
+- **TailwindCSS**: Framework utilitário para estilização rápida e consistente.  
+- **shadcn/ui**: Conjunto de componentes acessíveis e customizáveis.  
+- **Zod**: Validação de esquemas para segurança em tempo de execução.  
+- **ContextAPI**: Gerenciamento de estado compartilhado de forma simples e eficiente.
 
-## Expanding the ESLint configuration
+## 🚀 Arquitetura e Princípios
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+O projeto segue a arquitetura **MVVM**, permitindo uma organização modular e escalável:  
+- **Model**: Gerencia os dados e a lógica de negócios.  
+- **ViewModel**: Atua como um intermediário entre o Model e a View, fornecendo os dados processados e ações necessários para a interface.  
+- **View**: Responsável pela renderização e interação com o usuário.  
 
-- Configure the top-level `parserOptions` property like this:
+Além disso, foram aplicados princípios do SOLID, como:  
+- **Inversão de Dependências**: Interfaces são usadas para desacoplar dependências, tornando o código mais testável e flexível.  
+- **Desacoplamento**: Separação clara de responsabilidades para facilitar manutenção e extensão.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠️ Como Começar  
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. **Instale as dependências**:
+   ```bash
+   npm install 
+   ```
+   
+2. **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+3. **Gere o build de produção:**
+    ```bash
+    npm run build
+    ```
+📜 Scripts Disponíveis
+```bash
+    npm run dev # - Inicia o servidor de desenvolvimento.
+    npm run build # - Gera o build otimizado para produção.
+    npm run lint # - Executa o ESLint para análise estática do código.
+    npm run preview # - Visualiza o build de produção localmente.
 ```
